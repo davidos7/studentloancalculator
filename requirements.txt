@@ -2,3 +2,5 @@ dash==2.15.0
 pandas==2.2.0
 gunicorn
 dash-tools
+matplotlib
+numpy
