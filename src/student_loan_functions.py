@@ -77,42 +77,47 @@ def plot_interactive_line_graph_of_total_paid_array_against_overpayment_and_init
     for k_index, k in enumerate(k_array):
         for i, initial_debt in enumerate(initial_debt_array):
             line_name = "Initial Debt: £" +str(initial_debt)+"k"
-            if(initial_debt == 80):
-                line_colour =  'red'
-                line_style ='-'
-            elif(initial_debt == 60):
-                line_colour = 'orange'
-                line_style ='-.'
-            elif(initial_debt == 40):
-                line_colour = 'dodgerblue'
-                line_style = ':'
-            elif(initial_debt == 20):
-                line_colour = 'blue'
-                line_style = '-.'
-            else:
-                line_colour = 'black'
-                line_style = '-'
+            #if(initial_debt == 80):
+            #    line_colour =  'red'
+            #    line_style ='-'
+            #elif(initial_debt == 60):
+            #    line_colour = 'orange'
+            #    line_style ='-.'
+            #elif(initial_debt == 40):
+            #    line_colour = 'dodgerblue'
+            #    line_style = ':'
+            #elif(initial_debt == 20):
+            #    line_colour = 'blue'
+            #    line_style = '-.'
+            #else:
+            #    line_colour = 'black'
+            #    line_style = '-'
+            line_colour = 'red'
+            line_style = '-'
             axis1.plot(overpayment_factor_array,total_paid_off_array[i,k_index, :],label=line_name,color=line_colour,ls=line_style)
+
+            line_colour = 'blue'
+            line_style = '-.'
             axis2.plot(overpayment_factor_array,paid_off_year_array[i,k_index, :],label=line_name,color=line_colour,ls=line_style)
 
-        axis1.legend()
+        #axis1.legend()
         axis1.set_xlim(0,max(overpayment_factor_array))
         axis1.set_ylim(0,300)
         axis1.set_yticks([0,50,100,150,200,250,300])
         axis1.set_xticks([0,2,4,6,8,10])
         axis1.yaxis.set_major_formatter(FormatStrFormatter('£%d,000'))
         axis1.xaxis.set_major_formatter(FormatStrFormatter('£%s,000'))
-        axis1.set_xlabel("Amount Paid Annually\nbeyond Minimum Loan Repayment",fontsize="12",fontweight="bold")
+        axis1.set_xlabel("Amount Paid Annually beyond\nMinimum Loan Repayment\n",fontsize="12",fontweight="bold")
         axis1.set_ylabel("    Total Paid over Lifetime",fontsize="12",fontweight="bold")
 
-        axis2.legend()
+        #axis2.legend()
         axis2.set_xlim(0,max(overpayment_factor_array))
         axis2.set_ylim(0,45)
         axis2.set_yticks([0,5,10,15,20,25,30,35,40,45])
         axis2.set_xticks([0,2,4,6,8,10])
         axis2.yaxis.set_major_formatter(FormatStrFormatter('%d Years'))
         axis2.xaxis.set_major_formatter(FormatStrFormatter('£%s,000'))
-        axis2.set_xlabel("Amount Paid Annually\nbeyond Minimum Loan Repayment",fontsize="12",fontweight="bold")
+        axis2.set_xlabel("Amount Paid Annually beyond\nMinimum Loan Repayment",fontsize="12",fontweight="bold")
         axis2.set_ylabel("    Years until Loan Repaid",fontsize="12",fontweight="bold")
 
         axis2.add_patch(
@@ -219,5 +224,5 @@ fig.text(0.0105, .91, 'Use the sliders below to input your student loan informat
 fig.text(0.0105, 0.651, "Inputs",fontsize=18,fontweight="bold")
 fig.text(0.32,0.001, "WHAT STUDENT LOAN PLAN AM I ON?\nStudent Finance England: Plan 1 if you started your course before Sept 2012.\n                                          Plan 2 if you started between Aug 2012 and Aug 2023.\n                                          Plan 5 if you started after July 2023.\nStudent Finance Wales:     Plan 1 if you started your course before Sept 2012.\n                                          Plan 2 if you started your course after Aug 2012.\nStudent Finance Northern Ireland: Plan 1.\nStudent Awards Agency Scotland: Plan 4.",fontsize=8)
 
-fig.text(0.65,0.02, "PLANNED FEATURES\n1) Option to apply discount rates to future cash flows used to predict 'Total Paid over\n    Lifetime' in order to create a fairer picture considering the interest that could have\n    been accured on money invested rather than used to repay the loan.\n2) Option to change the x-axis variable (i.e. plotting against salary, initial debt, or similar).",fontsize=8)
+fig.text(0.65,0.02, "PLANNED FEATURES\n\n1) Option to apply discount rates to future cash flows used to predict 'Total Paid over\n    Lifetime' in order to create a fairer picture considering the interest that could have\n    been accured on money invested rather than used to repay the loan.\n\n2) Option to change the x-axis variable (i.e. plotting against salary, initial debt, or similar).",fontsize=8)
 #plt.show()
