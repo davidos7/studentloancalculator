@@ -26,7 +26,7 @@ server = app.server
 app.layout = dbc.Container([
     html.H1("Student Loan Calculator", className='mb-2', style={'textAlign': 'center',"font-weight":"bold","font-family":"arial"}),
     html.H4("David Barton, 2024", className='mb-2', style={'textAlign': 'center',"font-family":"arial"}),
-    html.H5("Use the sliders at the bottom to input your current student loan debt,\ncurrent salary, and estimates of the average annual interest on the loan and\nyour average annual salary increase.\n\n➤  The first plot shows the total amount you will pay towards your loan until it\nis written-off or fully paid-off. This depends on the amount you pay per month above\nthe minimum required payment.\n\n➤  The second plot shows the number of years until the loan is paid-off or\nwritten-off for the same scenario.", className='mb-2', style={'textAlign': 'center','white-space':'pre',"font-family":"arial"}),
+    html.H5("Use the sliders at the bottom to input your current student loan\ndebt, current salary, and estimates of the average annual interest\non the loan and your average annual salary increase.\n\n➤  The first plot shows the total amount you will pay towards\nyour loan until it is written-off or fully paid-off. This depends\non the amount you pay per month above the minimum\nrequired payment.\n\n➤  The second plot shows the number of years until the loan is\npaid-off or written-off for the same scenario.", className='mb-2', style={'textAlign': 'start','white-space':'pre',"font-family":"arial"}),
     html.Br(),
     dbc.Row([
         dbc.Col([
@@ -75,7 +75,7 @@ app.layout = dbc.Container([
                        )
         ], width=2),
         dbc.Col([html.Div(
-            "☚ Plan 1 and 4 Student Loans are charged interest at a rate equal to\nwhichever is lower of:\n               A) RPI      B) Bank of England Base Rate + 1%\n☚ Plan 2 Student Loans are charged interest at a rate equal to RPI + 3%.\n☚ Plan 5 Student Loans are charged interest at a rate equal to RPI.")],
+            "➤ Plan 1 and 4 Student Loans are charged interest at a rate\nequal to whichever is lower of:\n               A) RPI      B) Bank of England Base Rate + 1%\n➤ Plan 2 Student Loans are charged interest at a rate equal to\nRPI + 3%.\n➤ Plan 5 Student Loans are charged interest at a rate equal to\nRPI.\n\n")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"})
     ]),
     html.Br(),
@@ -98,7 +98,7 @@ app.layout = dbc.Container([
                        )
         ], width=2),
         dbc.Col([html.Div(
-            "\n ☚ Plan 1 Student Loans are written off after 25 years.\n☚ Plan 2 and 4 Student Loans are written off after 30 years.\n☚ Plan 5 Student Loans are written off after 40 years.\n\n")],
+            "\n➤ Plan 1 Student Loans are written off after 25 years.\n➤ Plan 2 and 4 Student Loans are written off after 30 years.\n➤ Plan 5 Student Loans are written off after 40 years.\n\n")],
             width=2, style={"white-space": 'pre', 'fontSize': 14,"font-family":"arial"})
     ]),
     html.Br(),
@@ -142,11 +142,11 @@ app.layout = dbc.Container([
             ])
         ], width=2),
         dbc.Col([html.Div(
-            "WHAT STUDENT LOAN PLAN AM I ON?\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and August 2023.\n➤ Plan 5 if you started after July 2023.\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 12012.\n➤ Plan 2 if you started your course after August 2012.\nStudent Finance Northern Ireland: ➤ Plan 1.\nStudent Awards Agency Scotland: ➤ Plan 4.")],
+            "\nWHAT STUDENT LOAN PLAN AM I ON?\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and\nAugust 2023.\n➤ Plan 5 if you started after July 2023.\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course after August 2012.\nStudent Finance Northern Ireland: ➤ Plan 1.\nStudent Awards Agency Scotland: ➤ Plan 4.")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"}),
     ]),
     dbc.Row([dbc.Col([html.Div(
-            "PLANNED FEATURES:\n➤ Option to apply discount rates to the future cash flows which are used to predict 'Total Paid Over Lifetime' in order to create a fairer picture\nconsidering the interest that could have been accrued on money invested rather than used to repay the loan.\n➤ Option to change the x-axis variable (i.e. plotting against salary, initial debt, or similar).\n\n")],
+            "\n\nPLANNED FEATURES:\n➤ Option to apply discount rates to the future cash flows which\nare used to predict 'Total Paid Over Lifetime' in order\nto create a fairer picture considering the interest\nthat could have been accrued on money invested\nrather than used to repay the loan.\n➤ Option to change the x-axis variable (i.e. plotting against\nsalary, initial debt, or similar).\n\n")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"}),
     ]),
 ])
@@ -165,7 +165,7 @@ def plot_data(input_initial_debt,input_initial_salary,annual_loan_interest,annua
     annual_loan_interest = annual_loan_interest/100
     annual_salary_increase = annual_salary_increase/100
     # Build the matplotlib figure
-    fig, (ax_cost,ax_time) = plt.subplots(2,1,figsize=(8,10),dpi=83,constrained_layout=True)
+    fig, (ax_cost,ax_time) = plt.subplots(2,1,figsize=(5,9),dpi=83,constrained_layout=True)
 
     initial_debt_and_salary_plot_data = calculate_paid_off_year_and_total_paid_array_across_initial_debt_and_salary(
         [input_initial_debt], [annual_salary_increase], overpayment_factor_array, initial_salary=input_initial_salary,
