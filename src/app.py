@@ -27,7 +27,6 @@ app.layout = dbc.Container([
     html.H1("Student Loan Calculator", className='mb-2', style={'textAlign': 'center',"font-weight":"bold","font-family":"arial"}),
     html.H4("David Barton, 2024", className='mb-2', style={'textAlign': 'center',"font-family":"arial"}),
     html.H5("Use the sliders at the bottom to input your current student loan\ndebt, current salary, and estimates of the average annual interest\non the loan and your average annual salary increase.\n\n➤  The first plot shows the total amount you will pay towards\nyour loan until it is written-off or fully paid-off. This depends\non the amount you pay per month above the minimum\nrequired payment.\n\n➤  The second plot shows the number of years until the loan is\npaid-off or written-off for the same scenario.", className='mb-2', style={'textAlign': 'start','white-space':'pre',"font-family":"arial"}),
-    html.Br(),
     dbc.Row([
         dbc.Col([
             html.Img(id='bar-graph-matplotlib')
@@ -142,11 +141,11 @@ app.layout = dbc.Container([
             ])
         ], width=2),
         dbc.Col([html.Div(
-            "\nWHAT STUDENT LOAN PLAN AM I ON?\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and\nAugust 2023.\n➤ Plan 5 if you started after July 2023.\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course after August 2012.\nStudent Finance Northern Ireland: ➤ Plan 1.\nStudent Awards Agency Scotland: ➤ Plan 4.")],
+            "\nWHAT STUDENT LOAN PLAN AM I ON?\n\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and\nAugust 2023.\n➤ Plan 5 if you started your course after July 2023.\n\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course after August 2012.\n\nStudent Finance Northern Ireland:\n➤ Plan 1.\n\nStudent Awards Agency Scotland:\n➤ Plan 4.")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"}),
     ]),
     dbc.Row([dbc.Col([html.Div(
-            "\n\nPLANNED FEATURES:\n➤ Option to apply discount rates to the future cash flows which\nare used to predict 'Total Paid Over Lifetime' in order\nto create a fairer picture considering the interest\nthat could have been accrued on money invested\nrather than used to repay the loan.\n➤ Option to change the x-axis variable (i.e. plotting against\nsalary, initial debt, or similar).\n\n")],
+            "\n\nPLANNED FEATURES:\n➤ Option to apply discount rates to the future cash flows which\nare used to predict 'Total Paid Over Lifetime' in order to create\na fairer picture considering the interest that could have been\naccrued on money invested rather than used to repay the loan.\n➤ Option to change the x-axis variable (i.e. plotting against\nsalary, initial debt, or similar).\n\n")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"}),
     ]),
 ])
