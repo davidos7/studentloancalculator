@@ -72,7 +72,7 @@ app.layout = dbc.Container([
                         },
                         id = "annual_loan_interest",
                         value=6,
-                        tooltip={"placement": "top", "always_visible": True,"template":"Average Annual\n Interest on Loan: {value}% ",
+                        tooltip={"placement": "top", "always_visible": True,"template":" Estimated Average Annual \nInterest on Loan: {value}%",
                                 "style": {"white-space":'pre',"fontSize": "18px","font-family":"arial"},},
                        )
         ], width=2),
@@ -80,6 +80,8 @@ app.layout = dbc.Container([
             "➤ Plan 1 and 4 loans are charged interest at a rate equal\nto the lower of: Bank of England Base Rate + 1%, or RPI.\n➤ Plan 2 loans are charged interest at a rate equal to RPI + 3%.\n➤ Plan 5 loans are charged interest at a rate equal to RPI.\n\n")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"})
     ]),
+    html.Br(),
+    html.Br(),
     html.Br(),
     dbc.Row([
         dbc.Col([
@@ -100,9 +102,10 @@ app.layout = dbc.Container([
                        )
         ], width=2),
         dbc.Col([html.Div(
-            "\n➤ Plan 1 loans are written off after 25 years.\n➤ Plan 2 and 4 loans are written off after 30 years.\n➤ Plan 5 loans are written off after 40 years.\n\n")],
+            "➤ Plan 1 loans are written off after 25 years.\n➤ Plan 2 and 4 loans are written off after 30 years.\n➤ Plan 5 loans are written off after 40 years.\n\n")],
             width=2, style={"white-space": 'pre', 'fontSize': 14,"font-family":"arial"})
     ]),
+    html.Br(),
     html.Br(),
     html.Br(),
     dbc.Row([
@@ -138,13 +141,13 @@ app.layout = dbc.Container([
                         },
                         id = "annual_salary_increase",
                         value=6,
-                        tooltip={"placement": "top", "always_visible": True,"template":"Average Annual\n Salary Increase: {value}% ",
+                        tooltip={"placement": "top", "always_visible": True,"template":" Estimated Average Annual \nSalary Increase: {value}%",
                                 "style": {"white-space":'pre',"fontSize": "18px","font-family":"arial"},},
                        )
             ])
         ], width=2),
         dbc.Col([html.Div(
-            "\nWHAT STUDENT LOAN PLAN AM I ON?\n\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and\nAugust 2023.\n➤ Plan 5 if you started your course after July 2023.\n\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course after August 2012.\n\nStudent Finance Northern Ireland:\n➤ Plan 1.\n\nStudent Awards Agency Scotland:\n➤ Plan 4.")],
+            "\n\nWHAT STUDENT LOAN PLAN AM I ON?\n\nStudent Finance England:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course between August 2012 and\nAugust 2023.\n➤ Plan 5 if you started your course after July 2023.\n\nStudent Finance Wales:\n➤ Plan 1 if you started your course before September 2012.\n➤ Plan 2 if you started your course after August 2012.\n\nStudent Finance Northern Ireland:\n➤ Plan 1.\n\nStudent Awards Agency Scotland:\n➤ Plan 4.")],
                 width=2,style={"white-space": 'pre', 'fontSize':14,"font-family":"arial"}),
     ]),
     dbc.Row([dbc.Col([html.Div(
