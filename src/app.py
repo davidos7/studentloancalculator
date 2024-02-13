@@ -164,7 +164,7 @@ def plot_data(input_initial_debt,input_initial_salary,annual_loan_interest,annua
     annual_loan_interest = annual_loan_interest/100
     annual_salary_increase = annual_salary_increase/100
     # Build the matplotlib figure
-    fig, (ax_cost,ax_time) = plt.subplots(2,1,figsize=(5,9),dpi=83,constrained_layout=True)
+    fig, (ax_cost,ax_time) = plt.subplots(2,1,figsize=(4.8,8),dpi=100,constrained_layout=True)
 
     initial_debt_and_salary_plot_data = calculate_paid_off_year_and_total_paid_array_across_initial_debt_and_salary(
         [input_initial_debt], [annual_salary_increase], overpayment_factor_array, initial_salary=input_initial_salary,
