@@ -26,7 +26,7 @@ server = app.server
 app.layout = dbc.Container([
     html.H1("Student Loan Calculator", className='mb-2', style={'textAlign': 'left',"font-weight":"bold","font-family":"arial"}),
     html.H4("David Barton, 2024 - Optimised for Mobile Viewing", className='mb-2', style={'textAlign': 'left',"font-family":"arial"}),
-    html.H5("The aim of this tool is to provide insight into whether there are\nany long-term saving benefits of paying more than the minimum\nannual student loan repayment. This depends heavily on how\nmuch you owe, how much you can pay, and how much you\nexpect to earn in the future.",
+    html.H5("The aim of this tool is to provide insight into whether paying\nmore than the minimum annual student loan repayment can\nlead to any long-term financial benefits. This depends heavily\non how much you owe, how much you can pay, and how much\nyou expect to earn in the future.",
         className='mb-2', style={'textAlign': 'start', 'white-space': 'pre', "font-family": "arial"}),
 
     html.H5("Use the sliders at the bottom to input the relevant values,\nand the plots will then update to reflect your situation.\n\n➤  The first plot shows the total amount you will pay towards\nyour loan until it is written-off or fully paid-off (see the red line).\nThe x-axis shows the effect of increasing the amount you repay\nannually above the minimum required payment; if the red line\ndrops off immediately right of the y-axis, it may be worth\npaying extra if possible.\n\n➤  The second plot shows the number of years until the loan is\npaid-off or written-off (blue dashed line), against the same x-axis.", className='mb-2', style={'textAlign': 'start','white-space':'pre',"font-family":"arial"}),
