@@ -1,0 +1,27 @@
+# Values are the number of SI units in each unit
+# Distance units
+inch = 0.0254
+ft = 0.3048
+mm = 1e-3
+cm = 1e-2
+km = 1e3
+NM = 1852
+# Mass units
+kg = 1
+lb = 0.45359237
+tonne = 1000
+# Volume units
+litres = 1e-3
+# Time units
+minute = 60
+hour = 3600
+# Pressure units
+bar = 1e5
+# Energy units
+J = 1
+kJ = 1e3
+# Power units
+W = 1
+kW = 1e3
+MW = 1e6
+hp = 745.699872
